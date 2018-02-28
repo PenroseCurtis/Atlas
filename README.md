@@ -1,1 +1,1 @@
-Sup
+Project intended to give table top game masters who are playing remotely an easy way to give players context as to where they are in the game world. As well, it could give world builders a unique tool to help build and display the things they create.

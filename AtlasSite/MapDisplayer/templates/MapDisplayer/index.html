@@ -1,0 +1,9 @@
+{% if Maps %}
+	<ul>
+	{% for map in Maps %}
+		<li><a href="/MapDisplayer/{{map.id}}/viewMap/">{{map.name}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No maps for you!</p>
+{% endif %}

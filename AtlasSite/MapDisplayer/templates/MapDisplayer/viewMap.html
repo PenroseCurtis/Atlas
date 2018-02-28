@@ -1,0 +1,19 @@
+{{mapToView}}
+{% load static %}
+{% with "MapDisplayer/"|add:mapToView.imageURL as URL %}
+<html>
+    <head>
+	<meta charset="utf-8">
+	<title>
+	    Check out some cool maps
+	</title>
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="{% static 'MapDisplayer/GetCoordinates.js' %}"></script>
+	    </head>
+    <body>
+	<a id="test">
+	    <img src="{% static URL %}"  alt="Map" style="height:1000px;width:1000px"/>
+	</a>
+    </body>
+</html>
+{% endwith %} 
