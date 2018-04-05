@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'MapDisplayer',
 ]
-
+LOGIN_REDIRECT_URL ='/MapDisplayer/'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -129,3 +129,4 @@ PROJECT_ROOT =os.path.abspath(os.path.dirname(__file__))
 STATICFILES_DIRS = (
 	os.path.join(PROJECT_ROOT, 'static'),
 )
+

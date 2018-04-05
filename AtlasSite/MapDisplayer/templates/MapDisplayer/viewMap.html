@@ -7,13 +7,44 @@
 	<title>
 	    Check out some cool maps
 	</title>
+	{% load js %}
+	<script> 
+		var currentMapID = {{ mapToView.id | js }};
+		var currentMap;
+		var mapSelected = false;
+		var mapSelectedID;
+		var map = {
+				'summary': {{mapToView.summary | js}},
+				'full_link': {{mapToView.full_link | js}},
+				'imageURL': {{mapToView.imageURL | js}},
+				'name': {{mapToView.name | js}},
+				'ID': {{mapToView.id | js}},
+			}
+		var mapList = []
+		var navIndex=0;
+		mapList[navIndex]= map;
+		
+	</script>
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	<script src="{% static 'MapDisplayer/GetCoordinates.js' %}"></script>
-	    </head>
+	<script src="{% static 'MapDisplayer/GetCoordinates.js' %}"i></script>	
+    </head>
     <body>
-	<a id="test">
-	    <img src="{% static URL %}"  alt="Map" style="height:1000px;width:1000px"/>
-	</a>
+	<button id="back">Back</button>
+	<button id="next">Forth</button>
+	<div>
+            <div style="float:left;">
+	        <img src="{% static URL %}"  alt="Map" style="height:600px;width:700px" id="test"/>
+            </div>
+	    <div style="float:right;">
+		<h1 id="mapName">{{ mapToView.name }}</h1>
+	    	<p id="mapSummary">
+			{{ mapToView.summary }}
+		</p>
+		<a href="" id="detailLink" target="_blank" >Full Details Here</a>
+	    </div>
+	<div>
+		<button id="Load">Load</button>
+	</div>
     </body>
 </html>
 {% endwith %} 
