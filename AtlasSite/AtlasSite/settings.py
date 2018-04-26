@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'MapDisplayer',
+    'AtlasSite',
+    'MapEditor',
 ]
 LOGIN_REDIRECT_URL ='/MapDisplayer/'
 MIDDLEWARE = [

@@ -1,0 +1,17 @@
+{% extends 'viewMapBase.html' %}
+{% block Info %}
+<form action="" method="POST">
+	{% csrf_token %}	
+	<input type = "text" value="{{mapToView.name}}" id="map-name" name="name">Map Name</input>
+	<br>
+	<textarea name= "summary" value="{{mapToView.summary}}" id="map-summary">{{mapToView.summary}}</textarea>
+	<br>
+	<input type = "text" name="full_link" value="{{mapToView.full_link}}" id=map-link">External Link</input>
+	<br>
+	<input type = "checkbox" name="isPrivate" value={{mapToView.isPrivate}}" id="map-isPrivate">Is Map Private?</input>
+	<br>
+	<input type="submit" id="submit-map"></input>
+	 
+</form>
+{% endblock %}
+

@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    path('MapDisplayer/', include('MapDisplayer.urls')),
+    path('MapDisplayer/', include('MapDisplayer.urls'), name='MapDisplayer'),
+    path('MapEditor/', include('MapEditor.urls'), name='MapEditor'),
 ]

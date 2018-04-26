@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Content %}
+<form id="search-form">
+	<input type="text" id="search-bar"/>
+	<input type="button"  id="search-button"/>
+</form>
+<div id="map-list">
+</div>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="{% static 'MapDisplayer/Search.js' %}"></script>
+{% endblock %}
+

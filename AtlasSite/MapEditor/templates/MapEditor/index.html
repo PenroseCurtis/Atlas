@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block Content %}
+<p>Maps I can edit</p>
+{% if MapsICanEdit %}
+	<ul>
+	{%for map in MapsICanEdit %}
+		<li><a href="/MapEditor/{{map.id}}">{{map.name}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>You have no maps to edit, try creating a new map</p>
+{% endif %}
+{% endblock %}

@@ -1,9 +1,25 @@
-{% if Maps %}
+{% extends "base.html" %}
+{% block Content %}
+<p>My Maps</p>
+{% if My_Maps %}
 	<ul>
-	{% for map in Maps %}
+	{% for map in My_Maps %}
 		<li><a href="/MapDisplayer/{{map.id}}/viewMap/">{{map.name}}</a></li>
 	{% endfor %}
 	</ul>
 {% else %}
-	<p>No maps for you!</p>
+	<p>You own no maps!</p>
 {% endif %}
+<br>
+<p>Maps I have access to!!!</p>
+<p>Just adding something random for a test</p>
+{% if Accessible_Maps %}
+	<ul>
+	{%for map in Accessible_Maps %}
+		<li><a href="/MapDisplayer/{{map.id}}/viewMap/">{{map.name}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>You have no maps you can visit!</p>
+{% endif %}
+{% endblock %}

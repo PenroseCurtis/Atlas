@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block Content %}
 {{mapToView}}
 {% load static %}
 {% with "MapDisplayer/"|add:mapToView.imageURL as URL %}
@@ -26,11 +28,11 @@
 		
 	</script>
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	<script src="{% static 'MapDisplayer/GetCoordinates.js' %}"i></script>	
+	<script src="{% static 'MapDisplayer/GetCoordinates.js' %}"></script>	
     </head>
     <body>
 	<button id="back">Back</button>
-	<button id="next">Forth</button>
+	<button id="next">Next</button>
 	<div>
             <div style="float:left;">
 	        <img src="{% static URL %}"  alt="Map" style="height:600px;width:700px" id="test"/>
@@ -48,3 +50,4 @@
     </body>
 </html>
 {% endwith %} 
+{% endblock %}

@@ -1,0 +1,20 @@
+{{mapToView}}
+{% load static %}
+{% with "MapDisplayer/"|add:mapToView.imageURL as URL %}
+	
+	<div>
+	{% block Map %}
+            <div style="float:left;">
+	        <img src="{% static URL %}"  alt="Map" style="height:600px;width:700px" id="test"/>
+            </div>
+	{% endblock %}
+	{% block Info %}
+	    <div style="float:right;">
+		<h1 id="mapName">{{ mapToView.name }}</h1>
+	    	<p id="mapSummary">
+			{{ mapToView.summary }}
+		</p>
+		<a href="" id="detailLink" target="_blank" >Full Details Here</a>
+	    </div>
+	{% endblock %}
+{% endwith %} 
